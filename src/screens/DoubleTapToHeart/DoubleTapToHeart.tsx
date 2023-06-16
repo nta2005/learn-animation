@@ -118,7 +118,6 @@ const styles = StyleSheet.create({
 	messageContent: {
 		width: WINDOW_WIDTH * 0.7,
 		backgroundColor: 'white',
-		//backgroundColor: '#19A3FE',
 		borderRadius: 8,
 		padding: 8,
 	},

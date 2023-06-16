@@ -4,4 +4,5 @@ export const Stacks = {
 	TiktokClone: 'TiktokClone',
 	DoubleTapToHeart: 'DoubleTapToHeart',
 	ReactToMessage: 'ReactToMessage',
+	DraggableBottomSheet: 'DraggableBottomSheet',
 };
