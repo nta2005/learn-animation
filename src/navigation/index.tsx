@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { enableScreens } from 'react-native-screens';
 
 import { Stacks } from 'common';
-import { HomeScreen, MomoHeader, TiktokClone } from 'screens';
+import { HomeScreen, MomoHeader, TiktokClone, DoubleTapToHeart } from 'screens';
 
 enableScreens();
 
@@ -23,6 +23,7 @@ const AppStack: React.FC = () => {
 				<Stack.Screen name={Stacks.Home} component={HomeScreen} />
 				<Stack.Screen name={Stacks.MomoHeader} component={MomoHeader} />
 				<Stack.Screen name={Stacks.TiktokClone} component={TiktokClone} />
+				<Stack.Screen name={Stacks.DoubleTapToHeart} component={DoubleTapToHeart} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

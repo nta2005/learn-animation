@@ -27,9 +27,21 @@ const Tiktok = {
 	user: require('./tiktok/user.png'),
 };
 
+const Users = {
+	girl_0: require('./users/girl0.jpg'),
+	girl_1: require('./users/girl1.jpeg'),
+	girl_2: require('./users/girl2.jpeg'),
+	girl_3: require('./users/girl3.jpeg'),
+	girl_4: require('./users/girl4.jpeg'),
+	girl_5: require('./users/girl5.jpeg'),
+};
+
 const images = {
 	momo: MoMo,
 	tiktok: Tiktok,
+	users: Users,
+	heart: require('./heart.png'),
+	heartOutline: require('./heart-outline.png'),
 };
 
 export default images;
