@@ -1,6 +1,13 @@
 import React from 'react';
-import { MomoHeader } from 'components';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import AppStack from 'navigation';
 
-export default function App() {
-	return <MomoHeader />;
-}
+const App: React.FC = () => {
+	return (
+		<SafeAreaProvider>
+			<AppStack />
+		</SafeAreaProvider>
+	);
+};
+
+export default App;

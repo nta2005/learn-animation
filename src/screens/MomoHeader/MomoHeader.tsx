@@ -9,8 +9,8 @@ import {
 	StatusBar,
 	Animated,
 } from 'react-native';
+import { images } from 'assets';
 import { getFeatureViewAnimation } from 'utils';
-import images from 'assets';
 
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 
@@ -18,7 +18,7 @@ const UPPER_HEADER_HEIGHT = 32;
 const UPPER_HEADER_PADDING_TOP = 4;
 const LOWER_HEADER_HEIGHT = 96;
 
-export default function MomoHeader() {
+const MomoHeader: React.FC = () => {
 	const animatedValue = useRef(new Animated.Value(0)).current;
 	const scrollViewRef = useRef<ScrollView>(null);
 	const lastOffsetY = useRef(0);
@@ -32,26 +32,26 @@ export default function MomoHeader() {
 	const FEATURE_LIST = [
 		{
 			name: 'NẠP TIỀN',
-			icon: images.momoDeposit,
-			iconCircle: images.momoDepositCircle,
+			icon: images.momo.deposit,
+			iconCircle: images.momo.depositCircle,
 			animation: depositViewAnimation,
 		},
 		{
 			name: 'RÚT TIỀN',
-			icon: images.momoWithdraw,
-			iconCircle: images.momoWithdrawCircle,
+			icon: images.momo.withdraw,
+			iconCircle: images.momo.withdrawCircle,
 			animation: withdrawViewAnimation,
 		},
 		{
 			name: 'MÃ QR',
-			icon: images.momoQr,
-			iconCircle: images.momoQrCircle,
+			icon: images.momo.qr,
+			iconCircle: images.momo.qrCircle,
 			animation: qrViewAnimation,
 		},
 		{
 			name: 'QUÉT MÃ',
-			icon: images.momoScan,
-			iconCircle: images.momoScanCircle,
+			icon: images.momo.scan,
+			iconCircle: images.momo.scanCircle,
 			animation: scanViewAnimation,
 		},
 	];
@@ -122,7 +122,7 @@ export default function MomoHeader() {
 			<SafeAreaView style={styles.header}>
 				<View style={styles.upperHeader}>
 					<View style={styles.searchContainer}>
-						<Image source={images.momoSearch} style={[styles.icon16, { marginLeft: 8 }]} />
+						<Image source={images.momo.search} style={[styles.icon16, { marginLeft: 8 }]} />
 						<AnimatedTextInput
 							placeholder="Tìm kiếm"
 							placeholderTextColor="rgba(255, 255, 255, 0.8)"
@@ -130,8 +130,8 @@ export default function MomoHeader() {
 						/>
 					</View>
 
-					<Image source={images.momoBell} style={styles.bell} />
-					<Image source={images.momoAvatar} style={styles.avatar} />
+					<Image source={images.momo.bell} style={styles.bell} />
+					<Image source={images.momo.avatar} style={styles.avatar} />
 				</View>
 
 				<View style={[styles.lowerHeader]}>
@@ -174,7 +174,9 @@ export default function MomoHeader() {
 			</ScrollView>
 		</View>
 	);
-}
+};
+
+export default MomoHeader;
 
 const styles = StyleSheet.create({
 	container: {

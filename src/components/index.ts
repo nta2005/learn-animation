@@ -1,1 +1,2 @@
-export { default as MomoHeader } from './MomoHeader';
+export { default as TiktokVideo } from './TiktokVideo/TiktokVideo';
+export { default as MenuItem } from './MenuItem/MenuItem';
