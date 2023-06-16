@@ -3,4 +3,5 @@ export const Stacks = {
 	MomoHeader: 'MomoHeader',
 	TiktokClone: 'TiktokClone',
 	DoubleTapToHeart: 'DoubleTapToHeart',
+	ReactToMessage: 'ReactToMessage',
 };
