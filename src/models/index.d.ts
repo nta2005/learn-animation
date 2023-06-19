@@ -8,3 +8,8 @@ interface VideoModel {
 	comments: number;
 	avatarUri: string;
 }
+
+interface UserModel {
+	id: number;
+	avatar: string;
+}

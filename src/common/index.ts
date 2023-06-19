@@ -6,4 +6,5 @@ export const Stacks = {
 	ReactToMessage: 'ReactToMessage',
 	DraggableBottomSheet: 'DraggableBottomSheet',
 	AnimatedBannerWithSearchInput: 'AnimatedBannerWithSearchInput',
+	CubeCarousel: 'CubeCarousel',
 };

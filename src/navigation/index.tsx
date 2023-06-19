@@ -12,6 +12,7 @@ import {
 	ReactToMessage,
 	DraggableBottomSheet,
 	AnimatedBannerWithSearchInput,
+	CubeCarousel,
 } from 'screens';
 
 enableScreens();
@@ -38,6 +39,7 @@ const AppStack: React.FC = () => {
 					name={Stacks.AnimatedBannerWithSearchInput}
 					component={AnimatedBannerWithSearchInput}
 				/>
+				<Stack.Screen name={Stacks.CubeCarousel} component={CubeCarousel} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
