@@ -14,6 +14,7 @@ import { images } from 'assets';
 import { getFeatureViewAnimation } from 'utils';
 
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
+const AnimatedSafeAreaView = Animated.createAnimatedComponent(SafeAreaView);
 
 const UPPER_HEADER_HEIGHT = 32;
 const UPPER_HEADER_PADDING_TOP = 4;
@@ -151,48 +152,43 @@ const MomoHeader: React.FC = () => {
 				<View style={styles.upperHeaderPlaceholder} />
 			</SafeAreaView>
 
-			<SafeAreaView style={styles.header}>
-				<Animated.View style={headerAnimation}>
-					<View style={styles.upperHeader}>
-						<View style={styles.searchContainer}>
-							<Image
-								source={images.momo.search}
-								style={[styles.icon16, { marginLeft: 8 }]}
-							/>
-							<AnimatedTextInput
-								placeholder="Tìm kiếm"
-								placeholderTextColor="rgba(255, 255, 255, 0.8)"
-								style={[styles.searchInput, textInputAnimation]}
-							/>
-						</View>
-
-						<Image source={images.momo.bell} style={styles.bell} />
-						<Image source={images.momo.avatar} style={styles.avatar} />
+			<AnimatedSafeAreaView style={[styles.header, headerAnimation]}>
+				<View style={styles.upperHeader}>
+					<View style={styles.searchContainer}>
+						<Image source={images.momo.search} style={[styles.icon16, { marginLeft: 8 }]} />
+						<AnimatedTextInput
+							placeholder="Tìm kiếm"
+							placeholderTextColor="rgba(255, 255, 255, 0.8)"
+							style={[styles.searchInput, textInputAnimation]}
+						/>
 					</View>
 
-					<View style={styles.lowerHeader}>
-						{FEATURE_LIST.map((feature, index) => (
-							<TouchableOpacity key={index} onPress={feature.press}>
-								<Animated.View style={[styles.feature, feature.animation]}>
-									<Animated.Image
-										source={feature.icon}
-										style={[styles.featureIcon, featureIconAnimation]}
-									/>
+					<Image source={images.momo.bell} style={styles.bell} />
+					<Image source={images.momo.avatar} style={styles.avatar} />
+				</View>
 
-									<Animated.Image
-										source={feature.iconCircle}
-										style={[styles.icon32, featureIconCircleAnimation]}
-									/>
+				<View style={styles.lowerHeader}>
+					{FEATURE_LIST.map((feature, index) => (
+						<TouchableOpacity key={index} onPress={feature.press}>
+							<Animated.View style={[styles.feature, feature.animation]}>
+								<Animated.Image
+									source={feature.icon}
+									style={[styles.featureIcon, featureIconAnimation]}
+								/>
 
-									<Animated.Text style={[styles.featureName, featureNameAnimation]}>
-										{feature.name}
-									</Animated.Text>
-								</Animated.View>
-							</TouchableOpacity>
-						))}
-					</View>
-				</Animated.View>
-			</SafeAreaView>
+								<Animated.Image
+									source={feature.iconCircle}
+									style={[styles.icon32, featureIconCircleAnimation]}
+								/>
+
+								<Animated.Text style={[styles.featureName, featureNameAnimation]}>
+									{feature.name}
+								</Animated.Text>
+							</Animated.View>
+						</TouchableOpacity>
+					))}
+				</View>
+			</AnimatedSafeAreaView>
 
 			<ScrollView
 				ref={scrollViewRef}
