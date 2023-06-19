@@ -4,16 +4,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { enableScreens } from 'react-native-screens';
 
 import { Stacks } from 'common';
-import {
-	HomeScreen,
-	MomoHeader,
-	TiktokClone,
-	DoubleTapToHeart,
-	ReactToMessage,
-	DraggableBottomSheet,
-	AnimatedBannerWithSearchInput,
-	CubeCarousel,
-} from 'screens';
 
 enableScreens();
 
@@ -29,17 +19,9 @@ const AppStack: React.FC = () => {
 					animationDuration: 300,
 					header: () => null,
 				}}>
-				<Stack.Screen name={Stacks.Home} component={HomeScreen} />
-				<Stack.Screen name={Stacks.MomoHeader} component={MomoHeader} />
-				<Stack.Screen name={Stacks.TiktokClone} component={TiktokClone} />
-				<Stack.Screen name={Stacks.DoubleTapToHeart} component={DoubleTapToHeart} />
-				<Stack.Screen name={Stacks.ReactToMessage} component={ReactToMessage} />
-				<Stack.Screen name={Stacks.DraggableBottomSheet} component={DraggableBottomSheet} />
-				<Stack.Screen
-					name={Stacks.AnimatedBannerWithSearchInput}
-					component={AnimatedBannerWithSearchInput}
-				/>
-				<Stack.Screen name={Stacks.CubeCarousel} component={CubeCarousel} />
+				{Stacks.map((stack, index) => (
+					<Stack.Screen key={index} name={stack.name} component={stack.component} />
+				))}
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

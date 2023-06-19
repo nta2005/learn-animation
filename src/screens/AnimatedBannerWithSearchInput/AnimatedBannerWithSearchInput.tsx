@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
 
 	searchInputContainer: {
 		position: 'absolute',
-		zIndex: 100,
+		zIndex: 101,
 		width: '100%',
 		padding: 16,
 		backgroundColor: 'white',

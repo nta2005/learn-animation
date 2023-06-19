@@ -155,6 +155,7 @@ const styles = StyleSheet.create({
 				},
 			},
 		}),
+		zIndex: 101,
 	},
 
 	heartIcon: {

@@ -9,11 +9,9 @@ const Home: React.FC = ({ navigation }: any) => {
 	return (
 		<SafeAreaView style={styles.container}>
 			<ScrollView contentContainerStyle={styles.scrollView}>
-				{Object.keys(Stacks)
-					.slice(1)
-					.map((stack: any, index: number) => (
-						<MenuItem key={index} onPress={() => navigate(stack)} label={stack} />
-					))}
+				{Stacks.slice(1).map((stack: any, index: number) => (
+					<MenuItem key={index} onPress={() => navigate(stack)} label={stack.name} />
+				))}
 			</ScrollView>
 		</SafeAreaView>
 	);
