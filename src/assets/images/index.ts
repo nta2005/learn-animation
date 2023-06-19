@@ -53,15 +53,25 @@ const FoodApp = {
 	search: require('./food-app/search.png'),
 };
 
+const FacebookEmoji = [
+	require('./facebook-emojis/like.gif'),
+	require('./facebook-emojis/love.gif'),
+	require('./facebook-emojis/haha.gif'),
+	require('./facebook-emojis/wow.gif'),
+	require('./facebook-emojis/sad.gif'),
+];
+
 const images = {
 	momo: MoMo,
 	tiktok: Tiktok,
 	users: Users,
 	foodapp: FoodApp,
+	facebookEmoji: FacebookEmoji,
 	heart: require('./heart.png'),
 	heartOutline: require('./heart-outline.png'),
 	logo: require('./logo.png'),
 	banner: require('./banner.png'),
+	like: require('./facebook-emojis/like.png'),
 };
 
 export default images;

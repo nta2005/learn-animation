@@ -3,6 +3,7 @@ import { images } from 'assets';
 
 export * from './momo';
 export * from './tiktok';
+export * from './facebook';
 
 const { width: WINDOW_WIDTH, height: WINDOW_HEIGHT } = Dimensions.get('window');
 

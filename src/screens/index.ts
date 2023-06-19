@@ -6,3 +6,4 @@ export { default as DraggableBottomSheet } from './DraggableBottomSheet/Draggabl
 export { default as ReactToMessage } from './ReactToMessage/ReactToMessage';
 export { default as AnimatedBannerWithSearchInput } from './AnimatedBannerWithSearchInput/AnimatedBannerWithSearchInput';
 export { default as CubeCarousel } from './CubeCarousel/CubeCarousel';
+export { default as FacebookPostReaction } from './FacebookPostReaction/FacebookPostReaction';

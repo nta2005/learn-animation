@@ -7,6 +7,7 @@ import {
 	DraggableBottomSheet,
 	AnimatedBannerWithSearchInput,
 	CubeCarousel,
+	FacebookPostReaction,
 } from 'screens';
 
 export const Stacks = [
@@ -18,4 +19,5 @@ export const Stacks = [
 	{ name: 'Draggable BottomSheet', component: DraggableBottomSheet },
 	{ name: 'Animated Banner With SearchInput', component: AnimatedBannerWithSearchInput },
 	{ name: 'Cube Carousel', component: CubeCarousel },
+	{ name: 'Facebook Post Reaction', component: FacebookPostReaction },
 ];
