@@ -13,13 +13,14 @@ export default MenuItem;
 
 const styles = StyleSheet.create({
 	item: {
-		width: '50%',
+		width: '60%',
 		alignItems: 'center',
 		padding: 8,
 		margin: 8,
 		borderRadius: 8,
 		backgroundColor: '#0584FE',
 	},
+
 	text: {
 		color: 'white',
 	},

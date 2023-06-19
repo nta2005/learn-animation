@@ -74,7 +74,7 @@ const DoubleTapToHeart: React.FC = () => {
 						lastTap.current = now;
 					}
 				}}>
-				<Image style={styles.messageAvatar} source={images.users.girl_1} />
+				<Image style={styles.messageAvatar} source={images.users.girl1} />
 				<View style={styles.messageContent}>
 					<Text style={styles.messageText}>Double Tap To Heart</Text>
 					<Text style={styles.messageSentTime}>14:12</Text>

@@ -5,4 +5,5 @@ export const Stacks = {
 	DoubleTapToHeart: 'DoubleTapToHeart',
 	ReactToMessage: 'ReactToMessage',
 	DraggableBottomSheet: 'DraggableBottomSheet',
+	AnimatedBannerWithSearchInput: 'AnimatedBannerWithSearchInput',
 };

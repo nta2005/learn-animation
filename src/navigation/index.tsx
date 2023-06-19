@@ -11,6 +11,7 @@ import {
 	DoubleTapToHeart,
 	ReactToMessage,
 	DraggableBottomSheet,
+	AnimatedBannerWithSearchInput,
 } from 'screens';
 
 enableScreens();
@@ -33,6 +34,10 @@ const AppStack: React.FC = () => {
 				<Stack.Screen name={Stacks.DoubleTapToHeart} component={DoubleTapToHeart} />
 				<Stack.Screen name={Stacks.ReactToMessage} component={ReactToMessage} />
 				<Stack.Screen name={Stacks.DraggableBottomSheet} component={DraggableBottomSheet} />
+				<Stack.Screen
+					name={Stacks.AnimatedBannerWithSearchInput}
+					component={AnimatedBannerWithSearchInput}
+				/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

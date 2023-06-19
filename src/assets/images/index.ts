@@ -28,20 +28,40 @@ const Tiktok = {
 };
 
 const Users = {
-	girl_0: require('./users/girl0.jpg'),
-	girl_1: require('./users/girl1.jpeg'),
-	girl_2: require('./users/girl2.jpeg'),
-	girl_3: require('./users/girl3.jpeg'),
-	girl_4: require('./users/girl4.jpeg'),
-	girl_5: require('./users/girl5.jpeg'),
+	girl0: require('./users/girl0.jpg'),
+	girl1: require('./users/girl1.jpeg'),
+	girl2: require('./users/girl2.jpeg'),
+	girl3: require('./users/girl3.jpeg'),
+	girl4: require('./users/girl4.jpeg'),
+	girl5: require('./users/girl5.jpeg'),
+};
+
+const FoodApp = {
+	food1: require('./food-app/food1.png'),
+	food2: require('./food-app/food2.png'),
+	food3: require('./food-app/food3.png'),
+	food4: require('./food-app/food4.png'),
+	food5: require('./food-app/food5.png'),
+	food6: require('./food-app/food6.png'),
+	food7: require('./food-app/food7.jpeg'),
+	food8: require('./food-app/food8.png'),
+	food9: require('./food-app/food9.png'),
+	food10: require('./food-app/food10.png'),
+	food11: require('./food-app/food11.png'),
+	foodBanner: require('./food-app/foodBanner.png'),
+	leftArrow: require('./food-app/left-arrow.png'),
+	search: require('./food-app/search.png'),
 };
 
 const images = {
 	momo: MoMo,
 	tiktok: Tiktok,
 	users: Users,
+	foodapp: FoodApp,
 	heart: require('./heart.png'),
 	heartOutline: require('./heart-outline.png'),
+	logo: require('./logo.png'),
+	banner: require('./banner.png'),
 };
 
 export default images;

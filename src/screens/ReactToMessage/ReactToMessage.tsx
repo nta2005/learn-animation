@@ -32,7 +32,7 @@ const ReactToMessage: React.FC = () => {
 	return (
 		<SafeAreaView style={styles.container}>
 			<View style={styles.messageContainer}>
-				<Image style={styles.messageAvatar} source={images.users.girl_3} />
+				<Image style={styles.messageAvatar} source={images.users.girl3} />
 				<View style={styles.messageContent}>
 					<Text style={styles.messageText}>React To Message</Text>
 				</View>
