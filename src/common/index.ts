@@ -20,4 +20,5 @@ export const Stacks = [
 	{ name: 'Cube Carousel', component: CubeCarousel },
 	{ name: 'Facebook Post Reaction', component: FacebookPostReaction },
 	{ name: 'Messenger Input', component: MessengerInput },
+	{ name: 'Modal', component: null, type: 'modal' },
 ];

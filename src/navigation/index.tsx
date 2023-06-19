@@ -1,24 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { enableScreens } from 'react-native-screens';
 
 import { Stacks } from 'common';
-import { MenuItem } from 'components';
+import { MenuItem, Modal, NoneComponent } from 'components';
 
 enableScreens();
 
 const Stack = createNativeStackNavigator();
 
 const Home: React.FC = ({ navigation }: any) => {
-	const { navigate } = navigation;
+	const [visibleModal, setVisibleModal] = useState(false);
+
+	const handlePress = (stack: any) => {
+		switch (stack.type) {
+			case 'modal':
+				return setVisibleModal(!visibleModal);
+
+			default:
+				return navigation.navigate(stack);
+		}
+	};
+
 	return (
 		<SafeAreaView style={styles.container}>
 			<ScrollView contentContainerStyle={styles.scrollView}>
 				{Stacks.map((stack: any, index: number) => (
-					<MenuItem key={index} onPress={() => navigate(stack)} label={stack.name} />
+					<MenuItem key={index} onPress={() => handlePress(stack)} label={stack.name} />
 				))}
+
+				<Modal isVisible={visibleModal} onClose={() => setVisibleModal(false)} />
 			</ScrollView>
 		</SafeAreaView>
 	);
@@ -37,7 +50,11 @@ const AppStack: React.FC = () => {
 				<Stack.Screen name={'Home'} component={Home} />
 
 				{Stacks.map((stack, index) => (
-					<Stack.Screen key={index} name={stack.name} component={stack.component} />
+					<Stack.Screen
+						key={index}
+						name={stack.name}
+						component={stack.component ?? NoneComponent}
+					/>
 				))}
 			</Stack.Navigator>
 		</NavigationContainer>
@@ -53,7 +70,7 @@ const styles = StyleSheet.create({
 	},
 
 	scrollView: {
-		justifyContent: 'center',
 		alignItems: 'center',
+		flexGrow: 1,
 	},
 });
