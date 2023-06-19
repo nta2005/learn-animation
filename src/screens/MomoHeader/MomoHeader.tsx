@@ -8,6 +8,7 @@ import {
 	ScrollView,
 	StatusBar,
 	Animated,
+	TouchableOpacity,
 } from 'react-native';
 import { images } from 'assets';
 import { getFeatureViewAnimation } from 'utils';
@@ -17,6 +18,8 @@ const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 const UPPER_HEADER_HEIGHT = 32;
 const UPPER_HEADER_PADDING_TOP = 4;
 const LOWER_HEADER_HEIGHT = 96;
+
+const HEADER_HEIGHT = UPPER_HEADER_HEIGHT + UPPER_HEADER_PADDING_TOP + LOWER_HEADER_HEIGHT;
 
 const MomoHeader: React.FC = () => {
 	const animatedValue = useRef(new Animated.Value(0)).current;
@@ -35,26 +38,46 @@ const MomoHeader: React.FC = () => {
 			icon: images.momo.deposit,
 			iconCircle: images.momo.depositCircle,
 			animation: depositViewAnimation,
+			press: () => handleDeposit(),
 		},
 		{
 			name: 'RÚT TIỀN',
 			icon: images.momo.withdraw,
 			iconCircle: images.momo.withdrawCircle,
 			animation: withdrawViewAnimation,
+			press: () => handleWithdraw(),
 		},
 		{
 			name: 'MÃ QR',
 			icon: images.momo.qr,
 			iconCircle: images.momo.qrCircle,
 			animation: qrViewAnimation,
+			press: () => handleQR(),
 		},
 		{
 			name: 'QUÉT MÃ',
 			icon: images.momo.scan,
 			iconCircle: images.momo.scanCircle,
 			animation: scanViewAnimation,
+			press: () => handleScan(),
 		},
 	];
+
+	const handleDeposit = () => {
+		console.log('handleDeposit');
+	};
+
+	const handleWithdraw = () => {
+		console.log('handleWithDraw');
+	};
+
+	const handleQR = () => {
+		console.log('handleQR');
+	};
+
+	const handleScan = () => {
+		console.log('handleScan');
+	};
 
 	const featureIconCircleAnimation = {
 		opacity: animatedValue.interpolate({
@@ -111,6 +134,15 @@ const MomoHeader: React.FC = () => {
 		}),
 	};
 
+	// Fixed click feature
+	const headerAnimation = {
+		height: animatedValue.interpolate({
+			inputRange: [0, 100],
+			outputRange: [HEADER_HEIGHT, UPPER_HEADER_HEIGHT + UPPER_HEADER_PADDING_TOP],
+			extrapolate: 'clamp',
+		}),
+	};
+
 	return (
 		<View style={styles.container}>
 			<StatusBar barStyle="light-content" />
@@ -120,42 +152,51 @@ const MomoHeader: React.FC = () => {
 			</SafeAreaView>
 
 			<SafeAreaView style={styles.header}>
-				<View style={styles.upperHeader}>
-					<View style={styles.searchContainer}>
-						<Image source={images.momo.search} style={[styles.icon16, { marginLeft: 8 }]} />
-						<AnimatedTextInput
-							placeholder="Tìm kiếm"
-							placeholderTextColor="rgba(255, 255, 255, 0.8)"
-							style={[styles.searchInput, textInputAnimation]}
-						/>
+				<Animated.View style={headerAnimation}>
+					<View style={styles.upperHeader}>
+						<View style={styles.searchContainer}>
+							<Image
+								source={images.momo.search}
+								style={[styles.icon16, { marginLeft: 8 }]}
+							/>
+							<AnimatedTextInput
+								placeholder="Tìm kiếm"
+								placeholderTextColor="rgba(255, 255, 255, 0.8)"
+								style={[styles.searchInput, textInputAnimation]}
+							/>
+						</View>
+
+						<Image source={images.momo.bell} style={styles.bell} />
+						<Image source={images.momo.avatar} style={styles.avatar} />
 					</View>
 
-					<Image source={images.momo.bell} style={styles.bell} />
-					<Image source={images.momo.avatar} style={styles.avatar} />
-				</View>
+					<View style={styles.lowerHeader}>
+						{FEATURE_LIST.map((feature, index) => (
+							<TouchableOpacity key={index} onPress={feature.press}>
+								<Animated.View style={[styles.feature, feature.animation]}>
+									<Animated.Image
+										source={feature.icon}
+										style={[styles.featureIcon, featureIconAnimation]}
+									/>
 
-				<View style={[styles.lowerHeader]}>
-					{FEATURE_LIST.map((feature, index) => (
-						<Animated.View key={index} style={[styles.feature, feature.animation]}>
-							<Animated.Image
-								source={feature.icon}
-								style={[styles.featureIcon, featureIconAnimation]}
-							/>
-							<Animated.Image
-								source={feature.iconCircle}
-								style={[styles.icon32, featureIconCircleAnimation]}
-							/>
-							<Animated.Text style={[styles.featureName, featureNameAnimation]}>
-								{feature.name}
-							</Animated.Text>
-						</Animated.View>
-					))}
-				</View>
+									<Animated.Image
+										source={feature.iconCircle}
+										style={[styles.icon32, featureIconCircleAnimation]}
+									/>
+
+									<Animated.Text style={[styles.featureName, featureNameAnimation]}>
+										{feature.name}
+									</Animated.Text>
+								</Animated.View>
+							</TouchableOpacity>
+						))}
+					</View>
+				</Animated.View>
 			</SafeAreaView>
 
 			<ScrollView
-				showsVerticalScrollIndicator={false}
 				ref={scrollViewRef}
+				showsVerticalScrollIndicator={false}
 				onScroll={(e) => {
 					const offsetY = e.nativeEvent.contentOffset.y;
 					scrollDirection.current = offsetY - lastOffsetY.current > 0 ? 'down' : 'up';
@@ -202,6 +243,9 @@ const styles = StyleSheet.create({
 		position: 'absolute',
 		width: '100%',
 		backgroundColor: '#AF0C6E',
+
+		// Fixed click feature
+		zIndex: 100,
 	},
 
 	upperHeader: {
