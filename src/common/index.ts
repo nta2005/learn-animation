@@ -1,5 +1,4 @@
 import {
-	HomeScreen,
 	MomoHeader,
 	TiktokClone,
 	DoubleTapToHeart,
@@ -12,7 +11,6 @@ import {
 } from 'screens';
 
 export const Stacks = [
-	{ name: 'Home', component: HomeScreen },
 	{ name: 'MoMo Header', component: MomoHeader },
 	{ name: 'Tiktok Clone', component: TiktokClone },
 	{ name: 'Double Tap To Heart', component: DoubleTapToHeart },
