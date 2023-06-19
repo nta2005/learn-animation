@@ -8,6 +8,7 @@ import {
 	CubeCarousel,
 	FacebookPostReaction,
 	MessengerInput,
+	PickPhoneColor,
 } from 'screens';
 
 export const Stacks = [
@@ -21,4 +22,5 @@ export const Stacks = [
 	{ name: 'Facebook Post Reaction', component: FacebookPostReaction },
 	{ name: 'Messenger Input', component: MessengerInput },
 	{ name: 'Modal', component: null, type: 'modal' },
+	{ name: 'Pick Phone Color', component: PickPhoneColor },
 ];

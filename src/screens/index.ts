@@ -7,3 +7,4 @@ export { default as AnimatedBannerWithSearchInput } from './AnimatedBannerWithSe
 export { default as CubeCarousel } from './CubeCarousel/CubeCarousel';
 export { default as FacebookPostReaction } from './FacebookPostReaction/FacebookPostReaction';
 export { default as MessengerInput } from './MessengerInput/MessengerInput';
+export { default as PickPhoneColor } from './PickPhoneColor/PickPhoneColor';

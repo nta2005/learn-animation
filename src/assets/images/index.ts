@@ -71,6 +71,13 @@ const Messenger = {
 	voice: require('./messenger/voice.png'),
 };
 
+const Phones = [
+	require('./pick-phone/iphone_11_pro_max_gold.png'),
+	require('./pick-phone/iphone_11_pro_max_midnight_green.png'),
+	require('./pick-phone/iphone_11_pro_max_silver.png'),
+	require('./pick-phone/iphone_11_pro_max_space_gray.png'),
+];
+
 const images = {
 	momo: MoMo,
 	tiktok: Tiktok,
@@ -78,6 +85,7 @@ const images = {
 	foodapp: FoodApp,
 	facebookEmoji: FacebookEmoji,
 	messenger: Messenger,
+	phones: Phones,
 	heart: require('./heart.png'),
 	heartOutline: require('./heart-outline.png'),
 	logo: require('./logo.png'),

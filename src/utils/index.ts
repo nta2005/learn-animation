@@ -4,6 +4,7 @@ import { images } from 'assets';
 export * from './momo';
 export * from './tiktok';
 export * from './facebook';
+export * from './phone';
 
 const { width: WINDOW_WIDTH, height: WINDOW_HEIGHT } = Dimensions.get('window');
 
