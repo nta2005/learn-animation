@@ -8,6 +8,7 @@ import {
 	AnimatedBannerWithSearchInput,
 	CubeCarousel,
 	FacebookPostReaction,
+	MessengerInput,
 } from 'screens';
 
 export const Stacks = [
@@ -20,4 +21,5 @@ export const Stacks = [
 	{ name: 'Animated Banner With SearchInput', component: AnimatedBannerWithSearchInput },
 	{ name: 'Cube Carousel', component: CubeCarousel },
 	{ name: 'Facebook Post Reaction', component: FacebookPostReaction },
+	{ name: 'Messenger Input', component: MessengerInput },
 ];

@@ -61,12 +61,23 @@ const FacebookEmoji = [
 	require('./facebook-emojis/sad.gif'),
 ];
 
+const Messenger = {
+	action: require('./messenger/action.png'),
+	camera: require('./messenger/camera.png'),
+	caretRight: require('./messenger/caret-right.png'),
+	gallery: require('./messenger/gallery.png'),
+	like: require('./messenger/like.png'),
+	send: require('./messenger/send.png'),
+	voice: require('./messenger/voice.png'),
+};
+
 const images = {
 	momo: MoMo,
 	tiktok: Tiktok,
 	users: Users,
 	foodapp: FoodApp,
 	facebookEmoji: FacebookEmoji,
+	messenger: Messenger,
 	heart: require('./heart.png'),
 	heartOutline: require('./heart-outline.png'),
 	logo: require('./logo.png'),

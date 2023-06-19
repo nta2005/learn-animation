@@ -14,7 +14,9 @@ import { images } from 'assets';
 import { SearchInput } from 'components';
 import { WINDOW_HEIGHT } from 'utils';
 
-export default ({ navigation }: any) => {
+const BANNER_HEIGHT = 224;
+
+const AnimatedBannerWithSearchInput: React.FC = ({ navigation }: any) => {
 	const animatedValue = useRef(new Animated.Value(0)).current;
 
 	const bannerAnimation = {
@@ -101,7 +103,8 @@ export default ({ navigation }: any) => {
 	);
 };
 
-const BANNER_HEIGHT = 224;
+export default AnimatedBannerWithSearchInput;
+
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,

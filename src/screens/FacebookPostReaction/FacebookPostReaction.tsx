@@ -29,7 +29,7 @@ const getEmojiIndex = (positionX: number) => {
 	return Math.ceil(positionX / EMOJI_SPACE) - 1;
 };
 
-const FacebookPostReaction = () => {
+const FacebookPostReaction: React.FC = () => {
 	const [selectedEmojiIndex, setSelectedEmojiIndex] = useState<null | number>(null);
 	const emojisBarSharedValue = useSharedValue(0);
 	const emojisBarAnimationStyle = useAnimatedStyle(() => {
