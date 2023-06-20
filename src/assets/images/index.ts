@@ -111,6 +111,7 @@ const images = {
 	banner: require('./banner.png'),
 	like: require('./facebook-emojis/like.png'),
 	close: require('./close.png'),
+	avengers: require('./zoomable-image/avengers.jpg'),
 };
 
 export default images;

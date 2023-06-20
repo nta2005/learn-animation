@@ -12,3 +12,4 @@ export { default as SwipeableList } from './SwipeableList/SwipeableList';
 export { default as TikTokMusicDisc } from './TikTokMusicDisc/TikTokMusicDisc';
 export { default as Tinder } from './Tinder/Tinder';
 export { default as ZingCarousel } from './ZingCarousel/ZingCarousel';
+export { default as ZoomableImage } from './ZoomableImage/ZoomableImage';

@@ -14,6 +14,7 @@ import {
 	TikTokMusicDisc,
 	Tinder,
 	ZingCarousel,
+	ZoomableImage,
 } from 'screens';
 
 export const Stacks = [
@@ -32,4 +33,5 @@ export const Stacks = [
 	{ name: 'TikTok Music Disc', component: TikTokMusicDisc },
 	{ name: 'Tinder', component: Tinder },
 	{ name: 'Zing Carousel', component: ZingCarousel }, // have some bug
+	{ name: 'Zoomable Image', component: ZoomableImage },
 ];
