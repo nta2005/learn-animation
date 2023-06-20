@@ -5,6 +5,7 @@ export * from './momo';
 export * from './tiktok';
 export * from './facebook';
 export * from './phone';
+export * from './zing';
 
 const { width: WINDOW_WIDTH, height: WINDOW_HEIGHT } = Dimensions.get('window');
 

@@ -13,6 +13,7 @@ import {
 	SwipeableList,
 	TikTokMusicDisc,
 	Tinder,
+	ZingCarousel,
 } from 'screens';
 
 export const Stacks = [
@@ -30,4 +31,5 @@ export const Stacks = [
 	// { name: 'Swipeable List', component: SwipeableList }, // disabled because have bug
 	{ name: 'TikTok Music Disc', component: TikTokMusicDisc },
 	{ name: 'Tinder', component: Tinder },
+	{ name: 'Zing Carousel', component: ZingCarousel }, // have some bug
 ];

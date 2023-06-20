@@ -78,6 +78,24 @@ const Phones = [
 	require('./pick-phone/iphone_11_pro_max_space_gray.png'),
 ];
 
+const Zing = {
+	image1: require('./zing/1.png'),
+	banner1: require('./zing/1banner.jpeg'),
+	image2: require('./zing/2.png'),
+	banner2: require('./zing/2banner.jpeg'),
+	image3: require('./zing/3.png'),
+	banner3: require('./zing/3banner.jpeg'),
+	image4: require('./zing/4.png'),
+	banner4: require('./zing/4banner.jpeg'),
+	image5: require('./zing/5.png'),
+	banner5: require('./zing/5banner.jpeg'),
+	image6: require('./zing/6.png'),
+	banner6: require('./zing/6banner.jpeg'),
+	image7: require('./zing/7.png'),
+	banner7: require('./zing/7banner.jpeg'),
+	curve: require('./zing/curve.png'),
+};
+
 const images = {
 	momo: MoMo,
 	tiktok: Tiktok,
@@ -86,6 +104,7 @@ const images = {
 	facebookEmoji: FacebookEmoji,
 	messenger: Messenger,
 	phones: Phones,
+	zing: Zing,
 	heart: require('./heart.png'),
 	heartOutline: require('./heart-outline.png'),
 	logo: require('./logo.png'),
