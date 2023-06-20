@@ -31,4 +31,12 @@ const userList = [
 	},
 ];
 
-export { WINDOW_HEIGHT, WINDOW_WIDTH, userList };
+const dummyData: Dummy[] = [];
+
+for (let i = 0; i < 50; i++) {
+	dummyData.push({
+		id: i,
+	});
+}
+
+export { WINDOW_HEIGHT, WINDOW_WIDTH, userList, dummyData };

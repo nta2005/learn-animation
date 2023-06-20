@@ -13,3 +13,7 @@ interface UserModel {
 	id: number;
 	avatar: string;
 }
+
+interface Dummy {
+	id: number;
+}

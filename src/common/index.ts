@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
 	MomoHeader,
 	TiktokClone,
@@ -9,6 +10,7 @@ import {
 	FacebookPostReaction,
 	MessengerInput,
 	PickPhoneColor,
+	SwipeableList,
 } from 'screens';
 
 export const Stacks = [
@@ -23,4 +25,5 @@ export const Stacks = [
 	{ name: 'Messenger Input', component: MessengerInput },
 	{ name: 'Modal', component: null, type: 'modal' },
 	{ name: 'Pick Phone Color', component: PickPhoneColor },
+	// { name: 'Swipeable List', component: SwipeableList }, // disabled because have bug
 ];
