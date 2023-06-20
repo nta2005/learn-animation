@@ -12,6 +12,7 @@ import {
 	PickPhoneColor,
 	SwipeableList,
 	TikTokMusicDisc,
+	Tinder,
 } from 'screens';
 
 export const Stacks = [
@@ -28,4 +29,5 @@ export const Stacks = [
 	{ name: 'Pick Phone Color', component: PickPhoneColor },
 	// { name: 'Swipeable List', component: SwipeableList }, // disabled because have bug
 	{ name: 'TikTok Music Disc', component: TikTokMusicDisc },
+	{ name: 'Tinder', component: Tinder },
 ];

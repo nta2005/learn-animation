@@ -10,3 +10,4 @@ export { default as MessengerInput } from './MessengerInput/MessengerInput';
 export { default as PickPhoneColor } from './PickPhoneColor/PickPhoneColor';
 export { default as SwipeableList } from './SwipeableList/SwipeableList';
 export { default as TikTokMusicDisc } from './TikTokMusicDisc/TikTokMusicDisc';
+export { default as Tinder } from './Tinder/Tinder';
