@@ -9,3 +9,4 @@ export { default as FacebookPostReaction } from './FacebookPostReaction/Facebook
 export { default as MessengerInput } from './MessengerInput/MessengerInput';
 export { default as PickPhoneColor } from './PickPhoneColor/PickPhoneColor';
 export { default as SwipeableList } from './SwipeableList/SwipeableList';
+export { default as TikTokMusicDisc } from './TikTokMusicDisc/TikTokMusicDisc';

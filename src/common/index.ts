@@ -11,6 +11,7 @@ import {
 	MessengerInput,
 	PickPhoneColor,
 	SwipeableList,
+	TikTokMusicDisc,
 } from 'screens';
 
 export const Stacks = [
@@ -26,4 +27,5 @@ export const Stacks = [
 	{ name: 'Modal', component: null, type: 'modal' },
 	{ name: 'Pick Phone Color', component: PickPhoneColor },
 	// { name: 'Swipeable List', component: SwipeableList }, // disabled because have bug
+	{ name: 'TikTok Music Disc', component: TikTokMusicDisc },
 ];
