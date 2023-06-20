@@ -70,7 +70,10 @@ const styles = StyleSheet.create({
 	},
 
 	scrollView: {
-		alignItems: 'center',
 		flexGrow: 1,
+		flexWrap: 'wrap',
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'center',
 	},
 });

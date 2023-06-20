@@ -24,7 +24,7 @@ const Modal: React.FC<ModalProps> = ({ isVisible, title, children, onClose }) =>
 			toValue: isVisible ? 1 : 0,
 			useNativeDriver: false,
 		}).start();
-	}, [isVisible]);
+	}, [animatedValue, isVisible]);
 
 	const containerAnimation = {
 		opacity: animatedValue,

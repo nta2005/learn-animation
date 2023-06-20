@@ -25,16 +25,16 @@ export const Stacks = [
 	{ name: 'Double Tap To Heart', component: DoubleTapToHeart },
 	{ name: 'React To Message', component: ReactToMessage },
 	{ name: 'Draggable BottomSheet', component: DraggableBottomSheet },
-	{ name: 'Animated Banner With SearchInput', component: AnimatedBannerWithSearchInput },
+	{ name: 'Animated Banner', component: AnimatedBannerWithSearchInput },
 	{ name: 'Cube Carousel', component: CubeCarousel },
 	{ name: 'Facebook Post Reaction', component: FacebookPostReaction },
 	{ name: 'Messenger Input', component: MessengerInput },
 	{ name: 'Modal', component: null, type: 'modal' },
 	{ name: 'Pick Phone Color', component: PickPhoneColor },
-	{ name: 'Swipeable List', component: SwipeableList }, // have some bug
+	// { name: 'Swipeable List', component: SwipeableList }, // have some bug
 	{ name: 'TikTok Music Disc', component: TikTokMusicDisc },
 	{ name: 'Tinder', component: Tinder },
-	{ name: 'Zing Carousel', component: ZingCarousel }, // have some bug
+	// { name: 'Zing Carousel', component: ZingCarousel }, // have some bug
 	{ name: 'Zoomable Image', component: ZoomableImage },
 	// { name: 'Tarot', component: Tarot }, // pending
 	// { name: 'Coffee Slider', component: CoffeeSlider }, // pending
