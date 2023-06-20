@@ -1,4 +1,4 @@
-export { default as MomoHeader } from './MomoHeader/MomoHeader';
+export { default as MomoHeader } from './MomoHeader/MomoHeader2';
 export { default as TiktokClone } from './TiktokClone/TiktokClone';
 export { default as DoubleTapToHeart } from './DoubleTapToHeart/DoubleTapToHeart';
 export { default as DraggableBottomSheet } from './DraggableBottomSheet/DraggableBottomSheet';

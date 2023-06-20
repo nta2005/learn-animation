@@ -1,17 +1,26 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import {
 	SafeAreaView,
 	View,
 	TextInput,
 	Image,
 	StyleSheet,
-	ScrollView,
 	StatusBar,
-	Animated,
 	TouchableOpacity,
 } from 'react-native';
+
+import Animated, {
+	useSharedValue,
+	useAnimatedStyle,
+	interpolate,
+	Extrapolate,
+	useAnimatedScrollHandler,
+	useAnimatedRef,
+	scrollTo,
+} from 'react-native-reanimated';
+
 import { images } from 'assets';
-import { getFeatureViewAnimation } from 'utils';
+import { useFeatureViewAnimation } from 'utils';
 
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 const AnimatedSafeAreaView = Animated.createAnimatedComponent(SafeAreaView);
@@ -23,15 +32,15 @@ const LOWER_HEADER_HEIGHT = 96;
 const HEADER_HEIGHT = UPPER_HEADER_HEIGHT + UPPER_HEADER_PADDING_TOP + LOWER_HEADER_HEIGHT;
 
 const MomoHeader: React.FC = () => {
-	const animatedValue = useRef(new Animated.Value(0)).current;
-	const scrollViewRef = useRef<ScrollView>(null);
-	const lastOffsetY = useRef(0);
-	const scrollDirection = useRef('');
+	const animatedValue = useSharedValue(0);
+	const scrollViewRef = useAnimatedRef<any>();
+	const lastOffsetY = useSharedValue(0);
+	const scrollDirection = useSharedValue('');
 
-	const depositViewAnimation = getFeatureViewAnimation(animatedValue, 36);
-	const withdrawViewAnimation = getFeatureViewAnimation(animatedValue, -16);
-	const qrViewAnimation = getFeatureViewAnimation(animatedValue, -56);
-	const scanViewAnimation = getFeatureViewAnimation(animatedValue, -92);
+	const depositViewAnimation = useFeatureViewAnimation(animatedValue, 36);
+	const withdrawViewAnimation = useFeatureViewAnimation(animatedValue, -16);
+	const qrViewAnimation = useFeatureViewAnimation(animatedValue, -56);
+	const scanViewAnimation = useFeatureViewAnimation(animatedValue, -92);
 
 	const FEATURE_LIST = [
 		{
@@ -80,69 +89,69 @@ const MomoHeader: React.FC = () => {
 		console.log('handleScan');
 	};
 
-	const featureIconCircleAnimation = {
-		opacity: animatedValue.interpolate({
-			inputRange: [0, 25],
-			outputRange: [1, 0],
-			extrapolate: 'clamp',
-		}),
-	};
-	const featureNameAnimation = {
-		transform: [
-			{
-				scale: animatedValue.interpolate({
-					inputRange: [0, 30],
-					outputRange: [1, 0],
-					extrapolate: 'clamp',
-				}),
-			},
-		],
-		opacity: animatedValue.interpolate({
-			inputRange: [0, 30],
-			outputRange: [1, 0],
-			extrapolate: 'clamp',
-		}),
-	};
-	const featureIconAnimation = {
-		opacity: animatedValue.interpolate({
-			inputRange: [0, 50],
-			outputRange: [0, 1],
-			extrapolate: 'clamp',
-		}),
-	};
+	const featureIconCircleAnimation = useAnimatedStyle(() => {
+		return {
+			opacity: interpolate(animatedValue.value, [0, 25], [1, 0], Extrapolate.CLAMP),
+		};
+	});
 
-	const textInputAnimation = {
-		transform: [
-			{
-				scaleX: animatedValue.interpolate({
-					inputRange: [0, 50],
-					outputRange: [1, 0],
-					extrapolate: 'clamp',
-				}),
-			},
-			{
-				translateX: animatedValue.interpolate({
-					inputRange: [0, 25],
-					outputRange: [0, -100],
-					extrapolate: 'clamp',
-				}),
-			},
-		],
-		opacity: animatedValue.interpolate({
-			inputRange: [0, 25],
-			outputRange: [1, 0],
-			extrapolate: 'clamp',
-		}),
-	};
+	const featureNameAnimation = useAnimatedStyle(() => {
+		return {
+			transform: [
+				{
+					scale: interpolate(animatedValue.value, [0, 30], [1, 0], Extrapolate.CLAMP),
+				},
+			],
+			opacity: interpolate(animatedValue.value, [0, 30], [1, 0], Extrapolate.CLAMP),
+		};
+	});
+
+	const featureIconAnimation = useAnimatedStyle(() => {
+		return {
+			opacity: interpolate(animatedValue.value, [0, 50], [0, 1], Extrapolate.CLAMP),
+		};
+	});
+
+	const textInputAnimation = useAnimatedStyle(() => {
+		return {
+			transform: [
+				{
+					scaleX: interpolate(animatedValue.value, [0, 50], [1, 0], Extrapolate.CLAMP),
+				},
+				{
+					translateX: interpolate(animatedValue.value, [0, 25], [0, -100], Extrapolate.CLAMP),
+				},
+			],
+			opacity: interpolate(animatedValue.value, [0, 25], [1, 0], Extrapolate.CLAMP),
+		};
+	});
 
 	// Fixed click feature
-	const headerAnimation = {
-		height: animatedValue.interpolate({
-			inputRange: [0, 100],
-			outputRange: [HEADER_HEIGHT, UPPER_HEADER_HEIGHT + UPPER_HEADER_PADDING_TOP],
-			extrapolate: 'clamp',
-		}),
-	};
+	const headerAnimation = useAnimatedStyle(() => {
+		return {
+			height: interpolate(
+				animatedValue.value,
+				[0, 100],
+				[HEADER_HEIGHT, UPPER_HEADER_HEIGHT + UPPER_HEADER_PADDING_TOP],
+				Extrapolate.CLAMP
+			),
+		};
+	});
+
+	const handleScroll = useAnimatedScrollHandler({
+		onScroll: (event) => {
+			const offsetY = event.contentOffset.y;
+			scrollDirection.value = offsetY - lastOffsetY.value > 0 ? 'down' : 'up';
+			lastOffsetY.value = offsetY;
+			animatedValue.value = offsetY;
+		},
+	});
+
+	const handleScrollEndDrag = useAnimatedScrollHandler({
+		onEndDrag: () => {
+			scrollTo(scrollViewRef, 0, scrollDirection.value === 'down' ? 100 : 0, true);
+		},
+	});
 
 	return (
 		<View style={styles.container}>
@@ -190,25 +199,15 @@ const MomoHeader: React.FC = () => {
 				</View>
 			</AnimatedSafeAreaView>
 
-			<ScrollView
+			<Animated.ScrollView
 				ref={scrollViewRef}
 				showsVerticalScrollIndicator={false}
-				onScroll={(e) => {
-					const offsetY = e.nativeEvent.contentOffset.y;
-					scrollDirection.current = offsetY - lastOffsetY.current > 0 ? 'down' : 'up';
-					lastOffsetY.current = offsetY;
-					animatedValue.setValue(offsetY);
-				}}
-				onScrollEndDrag={() => {
-					scrollViewRef.current?.scrollTo({
-						y: scrollDirection.current === 'down' ? 100 : 0,
-						animated: true,
-					});
-				}}
+				onScroll={handleScroll}
+				onScrollEndDrag={handleScrollEndDrag}
 				scrollEventThrottle={16}>
 				<View style={styles.spaceForHeader} />
 				<View style={styles.scrollViewContent} />
-			</ScrollView>
+			</Animated.ScrollView>
 		</View>
 	);
 };
