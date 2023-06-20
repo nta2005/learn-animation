@@ -12,9 +12,10 @@ import {
 } from 'react-native';
 import { images } from 'assets';
 import { SearchInput } from 'components';
-import { WINDOW_HEIGHT } from 'utils';
 
 const BANNER_HEIGHT = 224;
+
+const squares = [...Array(50).keys()];
 
 const AnimatedBannerWithSearchInput: React.FC = ({ navigation }: any) => {
 	const animatedValue = useRef(new Animated.Value(0)).current;
@@ -67,7 +68,7 @@ const AnimatedBannerWithSearchInput: React.FC = ({ navigation }: any) => {
 
 			<Animated.View style={[styles.searchInputContainer, searchInputContainerAnimation]}>
 				<SafeAreaView />
-				<SearchInput editable={false} pointerEvents="none" />
+				<SearchInput autoFocus={false} />
 			</Animated.View>
 			<TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
 				<Animated.Image
@@ -85,6 +86,7 @@ const AnimatedBannerWithSearchInput: React.FC = ({ navigation }: any) => {
 				<Image style={styles.banner} source={images.banner} />
 			</Animated.View>
 			<ScrollView
+				keyboardShouldPersistTaps="never"
 				onScroll={Animated.event(
 					[
 						{
@@ -97,7 +99,11 @@ const AnimatedBannerWithSearchInput: React.FC = ({ navigation }: any) => {
 				)}
 				scrollEventThrottle={16}>
 				<View style={styles.paddingForBanner} />
-				<View style={styles.scrollViewContent} />
+				<View style={styles.scrollViewContent}>
+					{squares.map((item) => (
+						<View key={item} style={styles.square} />
+					))}
+				</View>
 			</ScrollView>
 		</View>
 	);
@@ -145,7 +151,7 @@ const styles = StyleSheet.create({
 
 	searchInputContainer: {
 		position: 'absolute',
-		zIndex: 101,
+		zIndex: 100,
 		width: '100%',
 		padding: 16,
 		backgroundColor: 'white',
@@ -179,7 +185,17 @@ const styles = StyleSheet.create({
 	},
 
 	scrollViewContent: {
-		height: WINDOW_HEIGHT,
 		backgroundColor: 'white',
+		flexDirection: 'row',
+		flexWrap: 'wrap',
+		justifyContent: 'center',
+	},
+
+	square: {
+		width: 100,
+		height: 100,
+		margin: 8,
+		backgroundColor: '#eaeaea',
+		zIndex: 100,
 	},
 });
