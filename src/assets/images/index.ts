@@ -96,6 +96,22 @@ const Zing = {
 	curve: require('./zing/curve.png'),
 };
 
+const Tarot = {
+	card: require('./tarot/card.png'),
+	ellipse: require('./tarot/ellipse.png'),
+	eye: require('./tarot/eye.png'),
+	eyes: require('./tarot/eyes.png'),
+	readerClosedEyes: require('./tarot/reader-closed-eyes.png'),
+	readerNoEyes: require('./tarot/reader-no-eyes.png'),
+};
+
+const Coffee = {
+	coffee1: require('./coffee/1.png'),
+	coffee2: require('./coffee/2.png'),
+	coffee3: require('./coffee/3.png'),
+	coffee6: require('./coffee/6.png'),
+};
+
 const images = {
 	momo: MoMo,
 	tiktok: Tiktok,
@@ -105,6 +121,8 @@ const images = {
 	messenger: Messenger,
 	phones: Phones,
 	zing: Zing,
+	tarot: Tarot,
+	coffee: Coffee,
 	heart: require('./heart.png'),
 	heartOutline: require('./heart-outline.png'),
 	logo: require('./logo.png'),

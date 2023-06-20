@@ -15,6 +15,8 @@ import {
 	Tinder,
 	ZingCarousel,
 	ZoomableImage,
+	Tarot,
+	CoffeeSlider,
 } from 'screens';
 
 export const Stacks = [
@@ -29,9 +31,11 @@ export const Stacks = [
 	{ name: 'Messenger Input', component: MessengerInput },
 	{ name: 'Modal', component: null, type: 'modal' },
 	{ name: 'Pick Phone Color', component: PickPhoneColor },
-	// { name: 'Swipeable List', component: SwipeableList }, // disabled because have bug
+	{ name: 'Swipeable List', component: SwipeableList }, // have some bug
 	{ name: 'TikTok Music Disc', component: TikTokMusicDisc },
 	{ name: 'Tinder', component: Tinder },
 	{ name: 'Zing Carousel', component: ZingCarousel }, // have some bug
 	{ name: 'Zoomable Image', component: ZoomableImage },
+	// { name: 'Tarot', component: Tarot }, // pending
+	// { name: 'Coffee Slider', component: CoffeeSlider }, // pending
 ];

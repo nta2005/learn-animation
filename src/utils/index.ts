@@ -6,6 +6,8 @@ export * from './tiktok';
 export * from './facebook';
 export * from './phone';
 export * from './zing';
+export * from './tarot';
+export * from './coffee';
 
 const { width: WINDOW_WIDTH, height: WINDOW_HEIGHT } = Dimensions.get('window');
 

@@ -13,3 +13,5 @@ export { default as TikTokMusicDisc } from './TikTokMusicDisc/TikTokMusicDisc';
 export { default as Tinder } from './Tinder/Tinder';
 export { default as ZingCarousel } from './ZingCarousel/ZingCarousel';
 export { default as ZoomableImage } from './ZoomableImage/ZoomableImage';
+export { default as Tarot } from './Tarot/Tarot';
+export { default as CoffeeSlider } from './CoffeeSlider/CoffeeSlider';
