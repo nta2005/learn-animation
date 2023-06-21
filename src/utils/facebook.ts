@@ -1,9 +1,9 @@
 import { Platform, StyleSheet } from 'react-native';
 import { images } from 'assets';
 
-export const EMOJI_BAR_PADDING = 4;
+export const EMOJI_BAR_PADDING = 2;
 export const EMOJI_BAR_BORDER_RADIUS = 16;
-export const EMOJI_SIZE = 28;
+export const EMOJI_SIZE = 32;
 export const EMOJI_MARGIN = 2;
 
 export const listEmoji = images.facebookEmoji;
@@ -70,6 +70,10 @@ export const facebookStyles = StyleSheet.create({
 		borderTopColor: '#eaeaea',
 	},
 
+	likeContainer: {
+		flexDirection: 'row',
+	},
+
 	likeIcon: {
 		width: 14,
 		height: 14,
@@ -82,9 +86,7 @@ export const facebookStyles = StyleSheet.create({
 	},
 
 	gestureHandlerRootView: {
-		position: 'absolute',
-		bottom: 48,
-		left: 32,
+		height: 50,
 	},
 
 	emojisBar: {
@@ -92,6 +94,11 @@ export const facebookStyles = StyleSheet.create({
 		borderRadius: EMOJI_BAR_BORDER_RADIUS,
 		padding: EMOJI_BAR_PADDING,
 		backgroundColor: 'white',
+		width: 200,
+		position: 'absolute',
+		top: -20,
+		height: EMOJI_SIZE + 6,
+		justifyContent: 'space-around',
 		...Platform.select({
 			android: { elevation: 3 },
 			ios: {
