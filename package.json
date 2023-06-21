@@ -9,6 +9,7 @@
     "start": "react-native start",
     "test": "jest",
     "reset-cache": "react-native start --reset-cache",
+    "clean-android": "cd android && ./gradlew clean",
     "apk-dev": "cd android && ./gradlew assembleRelease",
     "aab-dev": "cd android && ./gradlew bundleRelease",
     "key-sha-dev": "keytool -keystore android/app/debug.keystore -list -v",
