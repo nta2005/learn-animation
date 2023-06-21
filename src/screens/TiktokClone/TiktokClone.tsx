@@ -7,6 +7,18 @@ import { tiktokTabs } from 'utils';
 const Tab = createBottomTabNavigator();
 
 const TiktokClone: React.FC = () => {
+	const renderTabBarIcon = (tab: any, focused: any) => {
+		return (
+			<Image
+				source={tab.icon}
+				style={[
+					tab.special ? styles.newVideoButton : styles.bottomTabIcon,
+					focused && styles.bottomTabIconFocused,
+				]}
+			/>
+		);
+	};
+
 	return (
 		<View style={styles.container}>
 			<Tab.Navigator
@@ -22,15 +34,7 @@ const TiktokClone: React.FC = () => {
 						component={tab.component()}
 						options={{
 							tabBarIcon: ({ focused }) => {
-								return (
-									<Image
-										source={tab.icon}
-										style={[
-											tab.special ? styles.newVideoButton : styles.bottomTabIcon,
-											focused && styles.bottomTabIconFocused,
-										]}
-									/>
-								);
+								return renderTabBarIcon(tab, focused);
 							},
 						}}
 					/>
