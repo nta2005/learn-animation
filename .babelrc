@@ -8,6 +8,8 @@
 					"assets": "./src/assets",
 					"common": "./src/common",
 					"components": "./src/components",
+					"models": "./src/models",
+					"native-modules": "./src/native-modules",
 					"navigation": "./src/navigation",
 					"screens": "./src/screens",
 					"utils": "./src/utils"

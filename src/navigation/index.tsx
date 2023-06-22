@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { enableScreens } from 'react-native-screens';
 
 import { Stacks } from 'common';
-import { MenuItem, Modal, NoneComponent } from 'components';
+import { MenuItem, Modal, NoneComponent, NewModuleButton } from 'components';
 
 enableScreens();
 
@@ -30,6 +30,8 @@ const Home: React.FC = ({ navigation }: any) => {
 				{Stacks.map((stack: any, index: number) => (
 					<MenuItem key={index} onPress={() => handlePress(stack)} label={stack.name} />
 				))}
+
+				<NewModuleButton />
 
 				<Modal isVisible={visibleModal} onClose={() => setVisibleModal(false)} />
 			</ScrollView>

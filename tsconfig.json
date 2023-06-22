@@ -21,6 +21,8 @@
 			"assets": ["assets/"],
 			"common": ["common/"],
 			"components": ["components/"],
+			"models": ["models/"],
+			"native-modules": ["native-modules/"],
 			"navigation": ["navigation/"],
 			"screens": ["screens/"],
 			"utils": ["utils/"]
