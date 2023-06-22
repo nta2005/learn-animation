@@ -93,7 +93,7 @@ const CubeCarousel: React.FC = () => {
 							},
 						},
 					],
-					{ useNativeDriver: true }
+					{ useNativeDriver: false }
 				)}
 				decelerationRate={0.99}
 				horizontal
@@ -115,20 +115,5 @@ const styles = StyleSheet.create({
 		width: '100%',
 		height: '100%',
 		borderRadius: 5,
-	},
-
-	footer: {
-		flexDirection: 'row',
-		alignItems: 'center',
-		justifyContent: 'space-between',
-		padding: 16,
-	},
-
-	input: {
-		borderWidth: 2,
-		borderColor: 'white',
-		height: 28,
-		width: 250,
-		borderRadius: Platform.OS === 'android' ? 0 : 10,
 	},
 });
