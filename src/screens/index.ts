@@ -4,7 +4,7 @@ export { default as DoubleTapToHeart } from './DoubleTapToHeart/DoubleTapToHeart
 export { default as DraggableBottomSheet } from './DraggableBottomSheet/DraggableBottomSheet';
 export { default as ReactToMessage } from './ReactToMessage/ReactToMessage';
 export { default as AnimatedBannerWithSearchInput } from './AnimatedBannerWithSearchInput/AnimatedBannerWithSearchInput';
-export { default as CubeCarousel } from './CubeCarousel/CubeCarousel';
+export { default as CubeCarousel } from './CubeCarousel/CubeCarousel2';
 export { default as FacebookPostReaction } from './FacebookPostReaction/FacebookPostReaction';
 export { default as MessengerInput } from './MessengerInput/MessengerInput';
 export { default as PickPhoneColor } from './PickPhoneColor/PickPhoneColor';
